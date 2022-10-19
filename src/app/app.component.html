@@ -1,20 +1,10 @@
 <div class="container">
   <h1>{{titulo}}</h1>
-  <form>
-    <div class="form-group">
-      <label>Operando A</label>
-      <input type="number" class="form-control"
-        placeholder="Escribe el ooperando A" 
-        [(ngModel)] = "operandoA" name="operandoA">
-      
-      <label>Operando B</label>
-      <input type="number" class="form-control"
-        placeholder="Escribe el ooperando B" 
-        [(ngModel)] = "operandoB" name="operandoB">
-
-      <button type="submit" class="btn btn-primary"
-        (click)="sumar()">Sumar</button>
-    </div>
-  </form>
-  <p>Resultado: {{resultado}}</p>
+  <app-formulario
+  (resultado)="sumar($event)"
+  >
+  </app-formulario>
+  <app-respuesta
+  [resultado]="resultado"
+  ></app-respuesta>
 </div>
